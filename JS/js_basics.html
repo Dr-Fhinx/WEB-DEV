@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Basics</title>
+    <script>
+        /* 
+     // JavaScript is either written in a separate page and linked to HTML using <script src = "js_page.js"></sript>
+        //or written directly in the HTML file using <script> tags
+        // This is a single-line comment in JavaScript
+        /* This is a multi-line comment in JavaScript
+        It can span multiple lines * /
+       // ************VARIABLES AND DATA TYPES************ //
+           //VARIABLES :
+        // Variables are used to store data values
+        // In JavaScript, you can declare variables using var, let, or const
+        var name = "Dr-Fhinx"; // String
+        let age = 25; // Number
+        const isStudent = true; // Boolean
+            //console.log(name); // Output: Dr-Fhinx. The console.log() function is used to print output to the console
+        // You can also use the typeof operator to check the type of a variable
+        console.log(typeof name); // Output: string
+        console.log(typeof age); // Output: number
+        console.log(typeof isStudent); // Output: boolean
+        // RULE: Use const for variables that won't change, let for variables that might change, and var for function-scoped variables (not recommended in modern JavaScript)
+        //RULES for variable names:
+        // 1. Must start with a letter, underscore (_), or dollar sign ($)
+        // 2. Can contain letters, numbers, underscores, and dollar signs
+        // 3. Cannot use reserved keywords (like var, let, const, function, etc.)
+        // 4. Case-sensitive (name and Name are different variables)
+        // var vs let vs const:
+        // - var: Function-scoped or globally scoped, can be re-declared and updated
+        // - let: Block-scoped, can be updated but not re-declared in the same scope
+        // - const: Block-scoped, cannot be updated or re-declared, must be initialized at declaration
+
+            // DATA TYPES:
+                //PRIMITIVE DATA TYPES AND OBJECTS :
+                //Primitive data types : Set of basic data types that are immutable and represent a single value.
+                    //Examples of primitive data types:
+                    let str = "Hello"; // String
+                    let num = 42; // Number
+                    let bool = true; // Boolean 
+                    //more examples:
+                    let undefinedVar; // Undefined (no value assigned)
+                    let nullVar = null; // Null (intentionally empty value)
+                    let symbolVar = Symbol("unique"); // Symbol (unique and immutable value)
+                    let bigIntVar = BigInt(123456789012345678901234567890); // BigInt (arbitrary-precision integer)
+                // INTERESTING POINT : What are immutable and mutable data types?
+                    //Immutable data types: These are data types whose values cannot be changed after they are created. Examples include strings, numbers, and booleans.
+                    //example of immutable data type:
+                        let immutableStr = "Hello";
+                        immutableStr =" World"; // This creates a new string, the original "Hello" remains unchanged
+                    //Mutable data types: These are data types whose values can be changed after they are created. Examples include arrays and objects.
+                        //example of mutable data type:
+                        let mutableArray = [1, 2, 3];
+                        mutableArray.push(4); // This modifies the original array by adding a new element
+                        
+                // SUMMARY OF PRIMITIVE DATA TYPES: 
+                    // 1. String: Represents a sequence of characters (e.g., "Hello").
+                    // 2. Number: Represents numeric values (e.g., 42).
+                    // 3. Boolean: Represents true or false values.
+                    // 4. Undefined: Represents a variable that has been declared but not assigned a value.
+                    // 5. Null: Represents an intentional absence of any value.
+                    // 6. Symbol: Represents a unique and immutable value, often used as object property keys.
+                    // 7. BigInt: Represents integers with arbitrary precision, useful for very large numbers.
+                    // Data types which are immutable and represent a single value are called primitive data types.
+                // NON-PRIMITIVE DATA TYPES:
+                // Non-primitive data types: These are data types that can hold multiple values or complex structures.
+                    //Examples of non-primitive data types:
+                    let array = [1, 2, 3]; // Array (ordered collection of values)
+                    let object = { key: "value" }; // Object (key-value pairs)
+                // OBJECTS:
+                    // Objects are collections of key-value pairs, where keys are strings (or Symbols) and values can be any data type.
+                    let person = {
+                        name: "Dr-Fhinx",
+                        age: 25,
+                        isStudent: true
+                    };
+                    console.log(person.name); // Output: Dr-Fhinx
+                    console.log(person["age"]); // Output: 25 (using bracket notation)
+                    console.log(person.isStudent); // Output: true
+                    // You can add, update, or delete properties in an object
+                    person.city = "New York"; // Adding a new property
+                    person.age = 26; // Updating an existing property
+                    delete person.isStudent; // Deleting a property
+                    console.log(person); // Output: { name: 'Dr-Fhinx', age: 26, city: 'New York' }
+    
+        // QUIZ : Write a JS program to store name, phone number and marks of a student using Objects and print them.
+        let student = {
+            name : "",
+            phone_no : 1234567890,
+            marks : 85 
+        }
+        console.log(student)
+        let Dr_Fhinx = student
+        Dr_Fhinx.name = "Dr_Fhinx"
+        console.log(Dr_Fhinx.name)
+        Dr_Fhinx.phone_no = 3454875475
+        console.log(Dr_Fhinx.phone_no)
+        Dr_Fhinx.marks = 78
+        console.log(Dr_Fhinx.marks)
+        
+        // PRACTICE SET : 
+            // 1.
+                let variable = "Dr-Fhinx"
+                console.log(variable)
+            // 2.
+                console.log(typeof variable)
+                variable = 10 
+            // 2.
+                console.log(typeof variable)
+                console.log(variable)
+
+            // 3. 
+                const xyz = {
+                    number : 69,
+                } 
+                console.log(xyz.number)
+                xyz.number = 96
+                console.log(xyz.number)
+                xyz.name = "Akhilesh"
+                console.log(xyz.name)
+                console.log(xyz)
+                    // Even after object being const the value changes.
+            // 4.
+                let five_words = {
+                    sleep : "my work !",
+                    wake_up : "at 10 am ",
+                    push_ups : "I do 10",
+                    walk : "20kms easy",
+                    eat : "mom's magic !",
+                }
+                console.log(five_words)
+                */
+
+        //--------------------------------------------------------//
+            
+        //*************OPERATORS*************//
+            // Arithmetic Operators: +, -, *, /, %, ** (exponentiation)
+            let a = 10;
+            let b = 5;
+            console.log(a + b); // Output: 15
+            console.log(a - b); // Output: 5
+            console.log(a * b); // Output: 50
+            console.log(a / b); // Output: 2
+            console.log(a % b); // Output: 0 (remainder)
+            console.log(a ** b); // Output: 100000 (10 raised to the power of 5)
+
+            // Comparison Operators: ==, ===, !=, !==, <, >, <=, >=
+            console.log(a == b); // Output: false (value equality)
+            console.log(a === b); // Output: false (value and type equality)
+            let c = "10";
+            console.log(a == c); // Output: true (value equality, type coercion occurs)
+            console.log(a === c); // Output: false (value and type equality, no coercion)
+            // Note: Use === for strict equality to avoid type coercion issues
+            // Use != for value inequality and !== for strict inequality
+            console.log(a != b); // Output: true (value inequality)
+            console.log(a !== b); // Output: true (value and type inequality)
+            console.log(a < b); // Output: false
+            console.log(a > b); // Output: true
+            console.log(a <= b); // Output: false
+            console.log(a >= b); // Output: true
+
+            // Logical Operators: && (AND), || (OR), ! (NOT)
+            let x = true;
+            let y = false;
+            console.log(x && y); // Output: false (both must be true)
+            console.log(x || y); // Output: true (at least one must be true)
+            console.log(!x); // Output: false (negation)
+            //Nite: any non-zero number is considered true, and zero is considered false in JavaScript
+            // Assignment Operators: =, +=, -=, *=, /=, %=
+            let z = 10;
+            z += 5; // Equivalent to z = z + 5
+            console.log(z); // Output: 15
+            z -= 3; // Equivalent to z = z - 3
+            console.log(z); // Output: 12
+            z *= 2; // Equivalent to z = z * 2
+            console.log(z); // Output: 24
+            z /= 4; // Equivalent to z = z / 4
+            console.log(z); // Output: 6
+            z %= 2; // Equivalent to z = z % 2
+            console.log(z); // Output: 0 (remainder)
+            // Ternary Operator: condition ? expr1 : expr2
+            let age = 18;
+            let canVote = (age >= 18) ? "Yes, you can vote." : "No, you cannot vote.";
+            console.log(canVote); // Output: Yes, you can vote.
+
+    // *************CONDITIONAL STATEMENTS************* //
+            // if-else statement
+            let score = 85;
+            if (score >= 90) {
+                console.log("Grade: A");
+            } else if (score >= 80) {
+                console.log("Grade: B");
+            } else if (score >= 70) {
+                console.log("Grade: C");
+            } else {
+                console.log("Grade: D");
+            }
+
+            // switch statement
+            let day = 3;
+            switch (day) {
+                case 1:
+                    console.log("Monday");
+                    break; 
+                    // Break statement exits the switch block
+                    // If break is not used, the code will continue to execute the next case
+                case 2:
+                    console.log("Tuesday");
+                    break;
+                case 3:
+                    console.log("Wednesday");
+                    break;
+                default:
+                    console.log("Invalid day");
+            }
+        
+        //*************LOOPS************* //
+            // for loop
+            for (let i = 0; i < 5; i++) {
+                console.log("Iteration:", i);
+            }
+
+            // while loop
+            let j = 0;
+            while (j < 5) {
+                console.log("While Loop Iteration:", j);
+                j++;
+            }
+
+            // do-while loop
+            let k = 0;
+            do {
+                console.log("Do-While Loop Iteration:", k);
+                k++;
+            } while (k < 5);
+
+            // for...of loop (for iterating over iterable objects like arrays)
+            let fruits = ["apple", "banana", "cherry"];
+            for (let fruit of fruits) {
+                console.log("Fruit:", fruit);
+            }
+
+            // for...in loop (for iterating over object properties)
+            let person = { name: "Dr-Fhinx", age: 25, city: "New York" };
+            for (let key in person) {
+                console.log(key + ":", person[key]);
+            }
+        // *************FUNCTIONS************* //
+            // Function Declaration
+            function greet(name) {
+                return "Hello, " + name + "!";
+            }
+            greet("Dr-Fhinx") // function call.To see the output, you can use console.log
+            console.log(greet("Dr-Fhinx") ); // Output: Hello, Dr-Fhinx! 
+            // Function Expression
+            const add = function (a, b) {
+                return a + b;
+            };
+            add(5, 10) //Function invocation. To see the output, you can use console.log
+            console.log(add(5, 10)); // Output: 15
+
+            // Arrow Function (ES6 syntax)
+            const multiply = (x, y) => x * y;
+            multiply(3, 4) // Function invocation. To see the output, you can use console.log
+            console.log(multiply(3, 4)); // Output: 12  
+
+            // Function with Default Parameters
+            function greetUser(name = "Guest") {
+                return "Hello, " + name + "!";
+            }
+            console.log(greetUser()); // Output: Hello, Guest!
+            console.log(greetUser("Dr-Fhinx")); // Output: Hello, Dr-Fhinx!
+
+        //*************STRING METHODS*************//
+            // String Length
+            let str = "Hello, Dr-Fhinx!";
+            console.log(str.length); // Output: 17
+
+            // String Concatenation
+            let firstName = "Dr-Fhinx";
+            let lastName = "The Coder";
+            let fullName = firstName + " " + lastName;
+            console.log(fullName); // Output: Dr-Fhinx The Coder
+
+            // String Methods
+            console.log(str.toUpperCase()); // Output: HELLO, DR-FHINX!
+            console.log(str.toLowerCase()); // Output: hello, dr-fhinx!
+            console.log(str.indexOf("Dr-Fhinx")); // Output: 7 (position of substring)
+            console.log(str.slice(0, 5)); // Output: Hello (substring from index 0 to 5)
+            console.log(str.replace("Dr-Fhinx", "The Coder")); // Output: Hello, The Coder!
+    </script>
+</head>
+<body>
+  <!--  -->
+</body>
+</html>
