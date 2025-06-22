@@ -289,6 +289,92 @@
             console.log(str.indexOf("Dr-Fhinx")); // Output: 7 (position of substring)
             console.log(str.slice(0, 5)); // Output: Hello (substring from index 0 to 5)
             console.log(str.replace("Dr-Fhinx", "The Coder")); // Output: Hello, The Coder!
+            console.log(str.split(", ")); // Output: [ 'Hello', 'Dr-Fhinx!' ] (splitting string into an array)
+            console.log(str.trim()); // Output: Hello, Dr-Fhinx! (removes whitespace from both ends)
+
+        //*************ARRAY METHODS*************//
+            // Creating an Array
+            let numbers = [1, 2, 3, 4, 5];
+            console.log(numbers); // Output: [1, 2, 3, 4, 5]
+
+            // Array Length
+            console.log(numbers.length); // Output: 5
+
+            // Accessing Array Elements
+            console.log(numbers[0]); // Output: 1 (first element)
+            console.log(numbers[numbers.length - 1]); // Output: 5 (last element)
+
+            // Array Methods
+            numbers.push(6); // Adds an element to the end of the array
+            console.log(numbers); // Output: [1, 2, 3, 4, 5, 6]
+            numbers.pop(); // Removes the last element from the array
+            console.log(numbers); // Output: [1, 2, 3, 4, 5]
+            numbers.unshift(0); // Adds an element to the beginning of the array
+            console.log(numbers); // Output: [0, 1, 2, 3, 4, 5]
+            numbers.shift(); // Removes the first element from the array
+            console.log(numbers); // Output: [1, 2, 3, 4, 5]
+            console.log(numbers.indexOf(3)); // Output: 2 (index of element)
+            console.log(numbers.includes(4)); // Output: true (checks if element exists)
+            numbers.splice(2, 1); // Removes 1 element at index 2
+            console.log(numbers); // Output: [1, 2, 4, 5]
+            let slicedArray = numbers.slice(1, 3); // Creates a new array from index 1 to 3 (exclusive)
+            console.log(slicedArray); // Output: [2, 4]
+            delete numbers[1]; // Deletes the element at index 1
+            console.log(numbers); // Output: [1, <1 empty item>, 4, 5] (the second element is now empty)
+            //NOTE: Deleting an element using delete does not change the length of the array, it just removes the value at that index.
+            numbers.sort(); // Sorts the array in ascending order
+            console.log(numbers); // Output: [1, 4, 5] (sorted array) 
+            // NOTE : sort() method sorts and results the old array, not a new one.
+            numbers.reverse(); // Reverses the order of the array
+            console.log(numbers); // Output: [5, 4, 1] (reversed array)
+
+            //NOTE : Strings are immutable, meaning you cannot change them directly. Instead, you create a new string with the desired changes.
+            // Arrays are mutable, meaning you can change their elements directly.
+            // You can also use methods like push, pop, shift, unshift, splice, and slice to modify arrays.
+            // Arrays can hold multiple values of different data types, while strings are sequences of characters.
+            // Arrays can be multidimensional, meaning you can have arrays within arrays
+            let multiArray = [[1, 2], [3, 4], [5, 6]];
+            console.log(multiArray[0][1]); // Output: 2
+
+            // You cannot directly change an element of array using a string method like replace, but you can change an element of an array directly.
+            numbers[0] = 10; // Changing the first element of the array
+            console.log(numbers); // Output: [10, 2, 3, 4, 5]
+            // typeof operator can be used to check the type of a variable or value
+            console.log(typeof numbers); // Output: object (arrays are objects in JavaScript)
+            console.log(typeof str); // Output: string (strings are primitive data types in JavaScript
+            console.log(typeof multiArray); // Output: object (multidimensional arrays are also objects
+            // You can also use Array.isArray() to check if a variable is an array
+            console.log(Array.isArray(numbers)); // Output: true
+            console.log(Array.isArray(str)); // Output: false
+            console.log(Array.isArray(multiArray)); // Output: true
+            // You can also use the instanceof operator to check if a variable is an instance of Array
+            console.log(numbers instanceof Array); // Output: true
+            console.log(str instanceof String); // Output: false (strings are not instances of Array)
+            console.log(multiArray instanceof Array); // Output: true
+            // You can also use the Array constructor to create an array
+            let newArray = new Array(1, 2, 3, 4, 5);
+            console.log(newArray); // Output: [1, 2, 3, 4, 5]
+            // You can also use the spread operator (...) to create a new array from an existing array
+            let spreadArray = [...numbers];
+            console.log(spreadArray); // Output: [10, 2, 3, 4, 5]
+            // You can also use the Array.from() method to create an array from an iterable object
+            let iterable = "Hello";
+            let fromArray = Array.from(iterable);
+            console.log(fromArray); // Output: [ 'H', 'e', 'l', 'l', 'o' ]
+            // You can also use the Array.of() method to create an array from a list of values
+            let ofArray = Array.of(1, 2, 3, 4, 5);
+            console.log(ofArray); // Output: [1, 2, 3, 4, 5]
+            // You can also use the Array.prototype.concat() method to merge two or more arrays
+            let array1 = [1, 2, 3];
+            let array2 = [4, 5, 6];
+            let mergedArray = array1.concat(array2);
+            console.log(mergedArray); // Output: [1, 2, 3, 4, 5, 6]
+            // You can also use the Array.prototype.join() method to join the elements of an array into a string
+            let joinedString = numbers.join(", ");
+            console.log(joinedString); // Output: 10, 2, 3, 4, 5
+
+
+
     </script>
 </head>
 <body>
