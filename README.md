@@ -1,2 +1,2 @@
 # WEB-DEV
-Learn everything related to web dev here.
+This project deals with learning Java Script and projects on web development.

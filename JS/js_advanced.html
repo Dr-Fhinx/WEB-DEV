@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Advanced Concepts</title>
+    <style>
+     
+        .box{
+            width : 200px;
+            height : 200px;
+            background-color: black;
+            color: white;
+            margin: 10px;
+            text-align: center;
+            line-height: 200px; /* Center text vertically */
+            font-size: 24px;
+        }
+    </style>
+    </head>
+<body>
+    <h1>JavaScript Advanced Concepts</h1>
+    <div>This is div</div>
+    <div class="container">
+        <div class="box">box 1</div>
+        <div class="box">box 2</div>
+        <div class="box">box 3</div>
+        <div class="box">box 4</div>
+        <div class="box">box 5</div>
+    </div>
+    <script>
+        // BOM and DOM Manipulation
+        //BOM (Browser Object Model): Provides information about the browser and allows interaction with the browser window.
+        //DOM (Document Object Model): Represents the structure of the HTML document and allows manipulation of HTML elements.
+        
+        //***** DOM Manipulation *****//
+        // Selecting elements
+        document.body.style.backgroundColor = "blue"; // Change the background color of the body element
+        document.body.div.style.backgroundColor = "red"; // Change the background color of the div element but this will not work as expected because `div` is not a direct property of `body`. Instead, use `document.querySelector` or `getElementById`.
+
+        //Children,Parents, and Siblings
+        console.log(document.body); // Log the body element
+        console.log(document.body.childNodes); // Log all child nodes of the body element
+        console.log(document.body.childNodes[0]); // Log the first child node of the body element
+        //The first child node is a text node (whitespace), so it may not be visible in the console.
+        console.log(document.body.childNodes[1]); // Log the second child node of the body element, which is the first div element.
+        console.log(document.body.childNodes[2]); // Log the third child node of the body element, which is the container div.
+        console.log(document.body.childNodes[2].childNodes); // Log all child nodes of the container div.
+        console.log(document.body.childNodes[2].childNodes[0]); // Log the first child node of the container div, which is the text node.
+        console.log(document.body.childNodes[2].childNodes[1]); // Log the second child node of the container div, which is the first box div.
+        console.log(document.body.childNodes[2].firstElementChild); // Log the first child element of the first box div.
+        console.log(document.body.childNodes[2].lastElementChild); // Log the last child element of the container div, which is the last box div.
+        document.body.childNodes[3].lastElementChild.style.backgroundColor = "green"; // Change the background color of the last box div to green.
+
+    </script>    
+</body>
+</html>

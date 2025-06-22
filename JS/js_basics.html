@@ -372,9 +372,68 @@
             // You can also use the Array.prototype.join() method to join the elements of an array into a string
             let joinedString = numbers.join(", ");
             console.log(joinedString); // Output: 10, 2, 3, 4, 5
+            //toString() method can be used to convert an array to a string
+            let arrayToString = numbers.toString();
+            console.log(arrayToString); // Output: 10,2,3,4,5
+            // You can also use the Array.prototype.filter() method to create a new array with elements that pass a test
+            let filteredArray = numbers.filter(num => num > 2);
+            console.log(filteredArray); // Output: [10, 3, 4, 5]
+            // You can also use the Array.prototype.map() method to create a new array
+            // with the results of calling a function on every element in the array
+            let mappedArray = numbers.map(num => num * 2);
+            console.log(mappedArray); // Output: [20, 4, 6, 8, 10]
+            // You can also use the Array.prototype.reduce() method to reduce an array to a single value
+            let sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+            console.log(sum); // Output: 24 (10 + 2 + 3 + 4 + 5)
+            // You can also use the Array.prototype.every() method to check if all elements in the array pass a test
+            let allGreaterThanZero = numbers.every(num => num > 0);
+            console.log(allGreaterThanZero); // Output: true
+            // You can also use the Array.prototype.some() method to check if at least one element in the array passes a test
+            let someGreaterThanFive = numbers.some(num => num > 5);
+            console.log(someGreaterThanFive); // Output: true
 
 
+            //EXERCISE : BUSINESS NAME GENERATOR
+            //Given : first name options : ["Tech", "Smart", "Global", "Innovative"]
+            //Given : second name options : ["Solutions", "Systems", "Services", "Consulting"]
+            //Given : third name options : ["Inc", "LLC", "Group", "Corp"]
+            //Write a program to generate a random business name using the above options
+            const firstNameOptions = {
+                0: "Tech",
+                1: "Smart",
+                2: "Global",
+                3: "Innovative"
+            }
 
+            const secondNameOptions = {
+                0: "Solutions",
+                1: "Systems",
+                2: "Services",
+                3: "Consulting"
+            }
+
+            const thirdNameOptions = {
+                0: "Inc",
+                1: "LLC",
+                2: "Group",
+                3: "Corp"
+            }
+
+         alert(`${Array.from(Object.values(firstNameOptions))[Math.floor(Math.random() * Array.from(Object.keys(firstNameOptions)).length)]} ${Array.from(Object.values(secondNameOptions))[Math.floor(Math.random() * Array.from(Object.keys(secondNameOptions)).length)]} ${Array.from(Object.values(thirdNameOptions))[Math.floor(Math.random() * Array.from(Object.keys(thirdNameOptions)).length)]}`);
+        
+         //OR
+            const firstNames = ["Tech", "Smart", "Global", "Innovative"];
+            const secondNames = ["Solutions", "Systems", "Services", "Consulting"];
+            const thirdNames = ["Inc", "LLC", "Group", "Corp"];
+            const randomFirstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+            const randomSecondName = secondNames[Math.floor(Math.random() * secondNames.length)];
+            const randomThirdName = thirdNames[Math.floor(Math.random() * thirdNames.length)];
+            const businessName = `${randomFirstName} ${randomSecondName} ${randomThirdName}`;
+            alert(businessName); 
+            //End of exercise
+        // *************END OF JS BASICS************* //
+    //-------------------------------------------------------------------------------------------------------------------//
+  
     </script>
 </head>
 <body>
