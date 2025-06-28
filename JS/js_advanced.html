@@ -16,15 +16,31 @@
             line-height: 200px; /* Center text vertically */
             font-size: 24px;
         }
+            
+            /* EXERCISE 001 */
+            .container1{
+                display: flex;
+                gap: 10px;
+                justify-content: center;/* Center items horizontally */
+                flex-wrap: wrap;/* Allow items to wrap to the next line */
+                align-items: center;/* Center items vertically */
+            }
+            .boxes{
+                width:100px;
+                height:100px;
+                border: 5px solid rgb(0, 0, 0);
+                /* display: flex; */
+                /* background-color: black; */
+            }
     </style>
     </head>
 <body>
     <h1>JavaScript Advanced Concepts</h1>
     <div>This is div</div>
     <div class="container">
-        <div class="box" id="box1">box 2</div>
-        <div class="box" id="box2">box 1</div>
-        <div class="box" id="box3 ">box 3</div>
+        <div class="box" id="box1">box 1</div>
+        <div class="box" id="box2">box 2</div>
+        <div class="box" id="box3">box 3</div>
         <div class="box" id="box4">box 4</div>
         <div class="box" id="box5">box 5</div>
     </div>
@@ -43,6 +59,16 @@
             <td>Data 4</td>
         </tr>
     </table>
+
+     <!-- EXERCISE 001 -->
+      <div class="container1">
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+      </div>
+
     <script>
         // BOM and DOM Manipulation
         //BOM (Browser Object Model): Provides information about the browser and allows interaction with the browser window.
@@ -73,13 +99,45 @@
          document.body.childNodes[9].rows[0].style.backgroundColor = "yellow"; // Change the background color of the table to yellow.
         document.body.children[3].rows[2].cells[1].style.backgroundColor = "orange"; // Change the background color of the second cell in the first row to orange.
     //SIBLINGS
-        console.log(document.body.childNodes[2].childNodes[1].nextElementSibling); // Log the next sibling of the first box div, which is the second box div.
-        console.log(document.body.childNodes[2].childNodes[1].previousElementSibling); // Log the previous sibling of the first box div, which is the text node.
-        console.log(document.body.childNodes[2].childNodes[1].parentElement); // Log the parent element of the first box div, which is the container div.
+        const firstBox = document.getElementById("box1");
+        console.log(firstBox.nextElementSibling); // Log the next sibling of the first box div, which is the second box div.
+        console.log(firstBox.previousElementSibling); // Log the previous sibling of the first box div, which is likely null.
+        console.log(firstBox.parentElement); // Log the parent element of the first box div, which is the container div.
     
         //***** SEARCHING THE DOM *****//
         // getElementById
-        let box1 = document.getElementById("box1"); // Get the element with
+        let box1 = document.getElementById("box1"); // Get the element with id "box1"
+        box1.style.backgroundColor = "red"; // Change the background color of the box1 element to red.
+        document.getElementById("box2").style.backgroundColor = "yellow"; // Change the background color of the box2 element to yellow.
+        // querySelector
+        let box = document.querySelector(".box"); // Get the first element with class "box"
+        box.style.backgroundColor = "cyan"; // Change the background color of the box element to cyan.
+        // querySelectorAll
+        console.log(document.querySelectorAll(".box")); // Log all elements with class "box"--> returns an HTML collection.
+        document.querySelectorAll(".box").forEach(element => {
+            element.style.border = "6px solid white"; // Add a border to each box element.
+        });
+        for (const element of document.querySelectorAll(".box")) {
+            element.style.fontStyle = "italic"; // Change the font style of each box element to italic.
+        }
+         // getElementsByClassName
+        let boxes = document.getElementsByClassName("box"); // Get all elements with class "box"
+        console.log(boxes); // Log the HTMLCollection of box elements
+        boxes[0].style.backgroundColor = "purple";  // Change the background color of the first box element to purple.
+        // matches, closest, and contains
+        console.log(box1.matches(".box")); // Check if box1 matches the class "box"
+        console.log(box1.closest(".container")); // Get the closest ancestor element with class "container"
+        console.log(box1.contains(document.querySelector(".box"))); // Check if box1 contains an element with class "box".
+         
+        //EXERCISE 001
+        // 1. Create 5 boxes and each time they need to have different colors. Try using HEX codes.
+        let hexcodes = "0123456789ABCDEF";
+        let randomHex = Array.from(hexcodes)
+        document.querySelectorAll(".boxes").forEach(element => {
+           const color = `#${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}`.toString();
+        console.log(color); 
+            element.style.backgroundColor = color;
+        });
     </script>    
 </body>
 </html>
