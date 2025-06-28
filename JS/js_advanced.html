@@ -22,12 +22,27 @@
     <h1>JavaScript Advanced Concepts</h1>
     <div>This is div</div>
     <div class="container">
-        <div class="box">box 1</div>
-        <div class="box">box 2</div>
-        <div class="box">box 3</div>
-        <div class="box">box 4</div>
-        <div class="box">box 5</div>
+        <div class="box" id="box1">box 2</div>
+        <div class="box" id="box2">box 1</div>
+        <div class="box" id="box3 ">box 3</div>
+        <div class="box" id="box4">box 4</div>
+        <div class="box" id="box5">box 5</div>
     </div>
+    <!-- <table> -->
+    <table border="1">
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+        </tr>
+        <tr>
+            <td>Data 3</td>
+            <td>Data 4</td>
+        </tr>
+    </table>
     <script>
         // BOM and DOM Manipulation
         //BOM (Browser Object Model): Provides information about the browser and allows interaction with the browser window.
@@ -36,7 +51,7 @@
         //***** DOM Manipulation *****//
         // Selecting elements
         document.body.style.backgroundColor = "blue"; // Change the background color of the body element
-        document.body.div.style.backgroundColor = "red"; // Change the background color of the div element but this will not work as expected because `div` is not a direct property of `body`. Instead, use `document.querySelector` or `getElementById`.
+        // document.body.div.style.backgroundColor = "red"; // Change the background color of the div element but this will not work as expected because `div` is not a direct property of `body`. Instead, use `document.querySelector` or `getElementById`.
 
         //Children,Parents, and Siblings
         console.log(document.body); // Log the body element
@@ -50,8 +65,21 @@
         console.log(document.body.childNodes[2].childNodes[1]); // Log the second child node of the container div, which is the first box div.
         console.log(document.body.childNodes[2].firstElementChild); // Log the first child element of the first box div.
         console.log(document.body.childNodes[2].lastElementChild); // Log the last child element of the container div, which is the last box div.
-        document.body.childNodes[3].lastElementChild.style.backgroundColor = "green"; // Change the background color of the last box div to green.
-
+        let bgcolor = document.body.childNodes[5].lastElementChild;
+       bgcolor.style.backgroundColor = "green"; // Change the background color of the last box div to green.
+       console.log(bgcolor);
+       
+       // TABLE LINKS
+         document.body.childNodes[9].rows[0].style.backgroundColor = "yellow"; // Change the background color of the table to yellow.
+        document.body.children[3].rows[2].cells[1].style.backgroundColor = "orange"; // Change the background color of the second cell in the first row to orange.
+    //SIBLINGS
+        console.log(document.body.childNodes[2].childNodes[1].nextElementSibling); // Log the next sibling of the first box div, which is the second box div.
+        console.log(document.body.childNodes[2].childNodes[1].previousElementSibling); // Log the previous sibling of the first box div, which is the text node.
+        console.log(document.body.childNodes[2].childNodes[1].parentElement); // Log the parent element of the first box div, which is the container div.
+    
+        //***** SEARCHING THE DOM *****//
+        // getElementById
+        let box1 = document.getElementById("box1"); // Get the element with
     </script>    
 </body>
 </html>
