@@ -32,6 +32,80 @@
                 /* display: flex; */
                 /* background-color: black; */
             }
+
+            .container2{
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center items horizontally */
+                gap: 10px; /* Add space between form elements */
+                background-color: black;
+                border-radius: 10px;
+                padding: 100px; /* Add padding around the form */
+                margin-top: 20px; /* Add space above the form */
+                margin-bottom: 20px; /* Add space below the form */
+                width: 800px;
+                position: relative;
+                /* how to align container to the center */
+                left: 50%;
+                transform: translateX(-50%); /* Center the container horizontally */
+                /* box-shadow: 0 0 10px rgba(247, 49, 49, 0.5); Add a subtle shadow for better visibility */
+                /* how to make shadow more visible */
+                box-shadow: 0 0 20px rgba(247, 49, 49, 0.7); /* Add a more pronounced shadow for better visibility */
+                border: 6px solid white;
+            }
+            .form {
+                display: flex;
+                flex-direction: column;
+                width: 500px; /* Set a fixed width for the form */
+            }
+            .image, .title, .duration, .description, .created, .views {
+                display: flex;
+                margin-bottom: 10px; /* Add space between form fields */
+                text-align: space-between; /* Align label and input */
+                align-content: space-between; /* Align label and input */
+            }
+            .image label, .title label, .duration label, .description label, .created label, .views label {
+                width: 100px; /* Set a fixed width for labels */
+                color: aliceblue;
+                font-weight: bolder;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                /* how to align labels with their corresponding innputs */
+                text-align: right; /* Align labels to the right */
+                margin-right: 10px; /* Add space between label and input */
+            }
+            .image input, .title input, .duration input, .description textarea, .created input, .views input {
+                flex: 1; /* Allow inputs to take the remaining space */
+                padding: 5px; /* Add some padding for better appearance */
+                /* how to align inputs with their corresponding labels */ 
+                text-align: left; /* Align inputs to the left */
+                margin-top: -5px;
+                padding-top: 2px;
+                border: 2px solid green;
+                border-radius: 4px;
+            }
+            .duration input {
+                width: 60px; /* Set a fixed width for duration inputs */
+            }
+            .button {
+                display: flex;
+                justify-content: center; /* Center the button horizontally */
+                margin-top: 30px; /* Add space above the button */
+                /* padding-bottom: -10px; Add space below the button */
+                margin-bottom: -50px;
+            }
+            .button button {
+                padding: 10px 20px; /* Add padding for better appearance */
+                background-color: #4CAF50; /* Green background */
+                color: white; /* White text */
+                border: none; /* Remove border */
+                border-radius: 5px; /* Rounded corners */
+                cursor: pointer; /* Pointer cursor on hover */
+            }
+            .button button:hover {
+                background-color: #336836; /* Darker green on hover */
+            }
+
+          
     </style>
     </head>
 <body>
@@ -68,6 +142,46 @@
         <div class="boxes"></div>
         <div class="boxes"></div>
       </div>
+
+      <!-- hidden property -->
+       <div hidden> I am a hidden div and no person viewing the wesite can view me axcept you use TextContent to see the text hidden in me.</div>
+
+      <!-- EXERCISE 002 -->
+       <div class="container2">
+        <h2 style="color: white;">Dynamic Card Generator</h2>
+        <div class="form">
+            <div class="image">
+            <label for="image">Image URL</label>
+            <input type="text" id="image" placeholder="Enter image URL">
+            </div>
+            <div class="title">
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="Enter title">
+            </div>
+            <div class="duration">
+            <label for="duration">Duration</label>
+            <input type="number" id="hours" placeholder="hours">
+            <input type="number" id="minutes" placeholder="minutes"> 
+            <input type="number" id="seconds" placeholder="seconds">
+            </div>
+            <div class="description">
+            <label for="description">Description</label>
+            <textarea id="textarea" placeholder="Enter description"></textarea>
+            </div>
+            <div class="created">
+            <label for="created">Created</label>
+            <input type="datetime-local" id="created">
+            </div>
+            <div class="views">
+            <label for="views">Views</label>
+            <input type="number" id="views" placeholder="Enter number of views">
+            </div>
+            <div class="button">
+            <button id="generate">Generate Card</button>
+            </div>
+        </div>
+       </div>
+
 
     <script>
         // BOM and DOM Manipulation
@@ -137,6 +251,119 @@
            const color = `#${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}`.toString();
         console.log(color); 
             element.style.backgroundColor = color;
+        });
+
+        // Inserting and Removing Elements
+        // NOTE 1: console.log and console.dir
+        // console.log displays the element as a string, while console.dir displays it as an object with its properties.
+        // NORE 2: tag name/ node name
+        // tag name is the name of the HTML element (e.g., "div", "span").
+        // node name is the type of node (e.g., "ELEMENT_NODE", "TEXT_NODE").
+        
+        //innerHTML,innerText, outerHTML, and textContent
+        // innerHTML: Allows to get the HTML inside the element as a string.
+        console.log(document.querySelector(".box").innerHTML) //returns the HTML content of the first box element.
+        //innerText: Allows to get the text content of the element without HTML tags.
+        console.log(document.querySelector(".box").innerText) //returns the text content of the first box element.
+        // outerHTML: Allows to get the HTML of the element including the element itself.
+        console.log(document.querySelector(".box").outerHTML) //returns the HTML of the first box element including the element itself.
+        //nodeName and tagName
+        console.log(document.querySelector(".box").nodeName) //returns the node name of the first box element, which is "DIV".
+        console.log(document.querySelector(".box").tagName) //returns the tag name of the first box element, which is also "DIV".
+        // textContent: Allows to get the text content of the element including all child elements.
+        console.log(document.querySelector(".box").textContent) //returns the text content of the first box element including all child elements.
+        // difference between innerText and textContent
+        // innerText: Returns the visible text content of the element, excluding hidden elements and styles.
+        // textContent: Returns the text content of the element including all child elements, regardless of visibility or styles.
+
+        // NOTE 3: hidden elements
+        // hidden elements are elements that are not visible on the page, such as those with display: none or visibility: hidden styles.
+        // They can still be accessed and manipulated using JavaScript
+        // but will not be displayed to the user.
+        // hidden property
+        //element.hidden = true; // Hides the element
+        //element.hidden = false; // Shows the element
+        // To check if an element is hidden, you can use the hidden property:
+        console.log(document.querySelector("div[hidden]").hidden); // returns true if the element is hidden, false if it is visible.
+        
+        //ATTRIBUTES
+        // hasAttribute, getAttribute, setAttribute, removeAttribute and element.attributes
+        // hasAttribute: Checks if an element has a specific attribute.
+        console.log(document.querySelector(".box").hasAttribute("id")); // returns true if the first box element has an "id" attribute, false otherwise.
+        // getAttribute: Gets the value of a specific attribute.
+        console.log(document.querySelector(".box").getAttribute("id")); // returns the value of the "id" attribute of the first box element.
+        // setAttribute: Sets the value of a specific attribute.
+        document.querySelector(".box").setAttribute("style", "background-color: pink; border: 6px solid white;"); // Sets the background color of the first box element to pink.
+        // NOTE 4: When setAttribute is used to set the style attribute, it overrides any existing styles.
+        // removeAttribute: Removes a specific attribute from an element.
+        document.querySelector(".box").removeAttribute("id"); // Removes the "id" attribute from the first box element.
+        console.log(document.querySelector(".box").hasAttribute("id")); // returns false since the "id" attribute has been removed.
+        //elem.attributes: Returns a NamedNodeMap of all attributes of the element.
+        console.log(document.querySelector(".box").attributes); // returns a NamedNodeMap of all attributes of the first box element.
+        // NamedNodeMap: A collection of attributes of an element, where each attribute is represented as a Node.
+        // It behaves like an array, but it is not an array. You can access attributes by index or by name.
+        
+        //NOTE 5: data attributes
+        // data attributes are custom attributes that can be added to HTML elements using the "data-" prefix.
+        // They are used to store custom data that can be accessed using JavaScript.
+        // Example: <div data-custom="value"></div>
+        // dataset: A property of an element that contains all data attributes as an object.
+        // let box1Data = document.getElementById("box1").dataset; // Get the dataset of the first box element
+
+        //INSERTING AND REMOVING ELEMENTS
+        // createElement: Creates a new HTML element.
+        let newBox = document.createElement("div"); // Create a new div element
+        newBox.setAttribute("class", "box boxClone"); // Set the class attribute of the new div element
+        newBox.innerHTML="New Box......"; // Set the inner HTML of the new div element
+        //append:
+        document.querySelector(".container").append(newBox)
+        //prepend:
+        document.querySelector(".container").prepend(newBox.cloneNode(true)); // Prepend a copy of the new box to the container
+        //before:
+        document.querySelector(".container").before(newBox.cloneNode(true)); // Insert a copy of the new box before the container
+        //after:
+        document.querySelector(".container").after(newBox.cloneNode(true)); // Insert a copy of the new box after the container
+        //replaceWith:
+       let replaceBox = document.querySelector(".boxClone").replaceWith(newBox.cloneNode(true)); // Replace the container with a copy of the new box
+        //remove:
+        document.querySelector(".boxClone").remove(); // Remove the first boxClone element from the DOM
+        //NOTE 6: When removing an element, it is permanently removed from the DOM and cannot be accessed again.
+        // To keep a reference to the removed element, you can store it in a variable before removing it.
+        
+        //insertAdjacentHTML
+        // beforebegin, afterbegin, beforeend, afterend
+        //insertAdjacentHTML: Inserts HTML at a specific position relative to the element.
+        document.querySelector(".container").insertAdjacentElement("beforebegin", newBox.cloneNode(true)); // Insert a copy of the new box before the container
+        document.querySelector(".container").insertAdjacentElement("afterbegin", newBox.cloneNode(true)); // Insert a copy of the new box at the beginning of the container
+        document.querySelector(".container").insertAdjacentElement("beforeend", newBox.cloneNode(true)); // Insert a copy of the new box at the end of the container
+        document.querySelector(".container").insertAdjacentElement("afterend", newBox.cloneNode(true)); // Insert a copy of the new box after the container
+
+        // Difference between append and insertAdjacentHTML
+        // append: Adds an element as the last child of the parent element.
+        // insertAdjacentHTML: Inserts HTML at a specific position relative to the element without replacing existing content.
+        // append can only add elements, while insertAdjacentHTML can add HTML content as well.
+
+        //ClassName and ClassList
+        // className: Gets or sets the class attribute of an element as a string.
+        console.log(document.querySelector(".box").className); // returns the class attribute of the first box element as a string.
+        document.querySelector(".box").className = "box newClass"; // Sets the class attribute of the first box element to "box newClass".
+        // classList: A property that provides methods to manipulate the class attribute of an element.
+        console.log(document.querySelector(".box").classList); // returns a DOMTokenList of the class attribute of the first box element.
+        //DOMTokenList: A collection of class names of an element, where each class name is represented as a string.
+        // It behaves like an array, but it is not an array. You can access class names by index or by name.
+        // It provides methods like add, remove, toggle, contains, and replace to manipulate class names easily.
+        document.querySelector(".box").classList.add("anotherClass"); // Adds a new class "anotherClass" to the first box element.
+        document.querySelector(".box").classList.remove("newClass"); // Removes the class "newClass" from the first box element.
+        document.querySelector(".box").classList.toggle("toggleClass"); // Toggles the class "toggleClass" on the first box element. If it exists, it will be removed;
+
+        // EXERCISE 002
+        // Create a dynamic card generator that contains image, title, duration, description and how many years or months or days ago it was created along with the number of views.
+        
+        forEach(document.querySelector(".container2").children, (element) => {
+            if(element.value ==""){
+                alert("Please fill all the fields before generating the card.");
+                return;
+            }
         });
     </script>    
 </body>
