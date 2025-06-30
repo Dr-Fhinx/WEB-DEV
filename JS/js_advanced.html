@@ -1,113 +1,217 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Advanced Concepts</title>
     <style>
-     
-        .box{
-            width : 200px;
-            height : 200px;
+        .box {
+            width: 200px;
+            height: 200px;
             background-color: black;
             color: white;
             margin: 10px;
             text-align: center;
-            line-height: 200px; /* Center text vertically */
+            line-height: 200px;
+            /* Center text vertically */
             font-size: 24px;
         }
-            
-            /* EXERCISE 001 */
-            .container1{
-                display: flex;
-                gap: 10px;
-                justify-content: center;/* Center items horizontally */
-                flex-wrap: wrap;/* Allow items to wrap to the next line */
-                align-items: center;/* Center items vertically */
-            }
-            .boxes{
-                width:100px;
-                height:100px;
-                border: 5px solid rgb(0, 0, 0);
-                /* display: flex; */
-                /* background-color: black; */
-            }
 
-            .container2{
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* Center items horizontally */
-                gap: 10px; /* Add space between form elements */
-                background-color: black;
-                border-radius: 10px;
-                padding: 100px; /* Add padding around the form */
-                margin-top: 20px; /* Add space above the form */
-                margin-bottom: 20px; /* Add space below the form */
-                width: 800px;
-                position: relative;
-                /* how to align container to the center */
-                left: 50%;
-                transform: translateX(-50%); /* Center the container horizontally */
-                /* box-shadow: 0 0 10px rgba(247, 49, 49, 0.5); Add a subtle shadow for better visibility */
-                /* how to make shadow more visible */
-                box-shadow: 0 0 20px rgba(247, 49, 49, 0.7); /* Add a more pronounced shadow for better visibility */
-                border: 6px solid white;
-            }
-            .form {
-                display: flex;
-                flex-direction: column;
-                width: 500px; /* Set a fixed width for the form */
-            }
-            .image, .title, .duration, .description, .created, .views {
-                display: flex;
-                margin-bottom: 10px; /* Add space between form fields */
-                text-align: space-between; /* Align label and input */
-                align-content: space-between; /* Align label and input */
-            }
-            .image label, .title label, .duration label, .description label, .created label, .views label {
-                width: 100px; /* Set a fixed width for labels */
-                color: aliceblue;
-                font-weight: bolder;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                /* how to align labels with their corresponding innputs */
-                text-align: right; /* Align labels to the right */
-                margin-right: 10px; /* Add space between label and input */
-            }
-            .image input, .title input, .duration input, .description textarea, .created input, .views input {
-                flex: 1; /* Allow inputs to take the remaining space */
-                padding: 5px; /* Add some padding for better appearance */
-                /* how to align inputs with their corresponding labels */ 
-                text-align: left; /* Align inputs to the left */
-                margin-top: -5px;
-                padding-top: 2px;
-                border: 2px solid green;
-                border-radius: 4px;
-            }
-            .duration input {
-                width: 60px; /* Set a fixed width for duration inputs */
-            }
-            .button {
-                display: flex;
-                justify-content: center; /* Center the button horizontally */
-                margin-top: 30px; /* Add space above the button */
-                /* padding-bottom: -10px; Add space below the button */
-                margin-bottom: -50px;
-            }
-            .button button {
-                padding: 10px 20px; /* Add padding for better appearance */
-                background-color: #4CAF50; /* Green background */
-                color: white; /* White text */
-                border: none; /* Remove border */
-                border-radius: 5px; /* Rounded corners */
-                cursor: pointer; /* Pointer cursor on hover */
-            }
-            .button button:hover {
-                background-color: #336836; /* Darker green on hover */
-            }
+        /* EXERCISE 001 */
+        .container1 {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            /* Center items horizontally */
+            flex-wrap: wrap;
+            /* Allow items to wrap to the next line */
+            align-items: center;
+            /* Center items vertically */
+        }
 
-          
+        .boxes {
+            width: 100px;
+            height: 100px;
+            border: 5px solid rgb(0, 0, 0);
+            /* display: flex; */
+            /* background-color: black; */
+        }
+
+        .container2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Center items horizontally */
+            gap: 10px;
+            /* Add space between form elements */
+            background-color: black;
+            border-radius: 10px;
+            padding: 100px;
+            /* Add padding around the form */
+            margin-top: 20px;
+            /* Add space above the form */
+            margin-bottom: 20px;
+            /* Add space below the form */
+            width: 800px;
+            position: relative;
+            /* how to align container to the center */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Center the container horizontally */
+            /* box-shadow: 0 0 10px rgba(247, 49, 49, 0.5); Add a subtle shadow for better visibility */
+            /* how to make shadow more visible */
+            box-shadow: 0 0 20px rgba(247, 49, 49, 0.7);
+            /* Add a more pronounced shadow for better visibility */
+            border: 6px solid white;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            /* Set a fixed width for the form */
+        }
+
+        .image,
+        .title,
+        .duration,
+        .description,
+        .created,
+        .views {
+            display: flex;
+            margin-bottom: 10px;
+            /* Add space between form fields */
+            text-align: space-between;
+            /* Align label and input */
+            align-content: space-between;
+            /* Align label and input */
+        }
+
+        .image label,
+        .title label,
+        .duration label,
+        .description label,
+        .created label,
+        .views label {
+            width: 100px;
+            /* Set a fixed width for labels */
+            color: aliceblue;
+            font-weight: bolder;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            /* how to align labels with their corresponding innputs */
+            text-align: right;
+            /* Align labels to the right */
+            margin-right: 10px;
+            /* Add space between label and input */
+        }
+
+        .image input,
+        .title input,
+        .duration input,
+        .description textarea,
+        .created input,
+        .views input {
+            flex: 1;
+            /* Allow inputs to take the remaining space */
+            padding: 5px;
+            /* Add some padding for better appearance */
+            /* how to align inputs with their corresponding labels */
+            text-align: left;
+            /* Align inputs to the left */
+            margin-top: -5px;
+            padding-top: 2px;
+            border: 2px solid green;
+            border-radius: 4px;
+        }
+
+        .duration input {
+            width: 60px;
+            /* Set a fixed width for duration inputs */
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            /* Center the button horizontally */
+            margin-top: 30px;
+            /* Add space above the button */
+            /* padding-bottom: -10px; Add space below the button */
+            margin-bottom: -50px;
+        }
+
+        .button button {
+            padding: 10px 20px;
+            /* Add padding for better appearance */
+            background-color: #4CAF50;
+            /* Green background */
+            color: white;
+            /* White text */
+            border: none;
+            /* Remove border */
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+        }
+
+        .button button:hover {
+            background-color: #336836;
+            /* Darker green on hover */
+        }
+
+        .cardContainer {
+            width: 100%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+
+        }
+
+        /* ***************** */
+        .divForEventBubbling {
+            background: #f5f5f5;
+            border: 2px solid #333;
+            padding: 40px;
+            margin: 30px auto;
+            width: 800px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .SpanChildOfDivForEventBubbling {
+            display: inline-block;
+            padding: 20px;
+            background: #e0e0e0;
+            border-radius: 8px;
+            border: 2px solid #888;
+            cursor: pointer;
+            font-size: 18px;
+            color: #222;
+            width: 500px;
+        }
+
+        .DivChildOfSpanChildOfDivForEventBubbling {
+            padding: 16px;
+            background: #fffbe7;
+            border: 1px dashed #201902;
+            color: #333;
+            font-size: 16px;
+            text-align: center;
+            min-width: 120px;
+            min-height: 40px;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.12);
+            margin: 8px;
+        }
     </style>
-    </head>
+</head>
+
 <body>
     <h1>JavaScript Advanced Concepts</h1>
     <div>This is div</div>
@@ -134,60 +238,72 @@
         </tr>
     </table>
 
-     <!-- EXERCISE 001 -->
-      <div class="container1">
+    <!-- EXERCISE 001 -->
+    <div class="container1">
         <div class="boxes"></div>
         <div class="boxes"></div>
         <div class="boxes"></div>
         <div class="boxes"></div>
         <div class="boxes"></div>
-      </div>
+    </div>
 
-      <!-- hidden property -->
-       <div hidden> I am a hidden div and no person viewing the wesite can view me axcept you use TextContent to see the text hidden in me.</div>
+    <!-- hidden property -->
+    <div hidden> I am a hidden div and no person viewing the wesite can view me axcept you use TextContent to see the
+        text hidden in me.</div>
 
-      <!-- EXERCISE 002 -->
-       <div class="container2">
+    <!-- EXERCISE 002 -->
+    <div class="container2">
         <h2 style="color: white;">Dynamic Card Generator</h2>
         <div class="form">
             <div class="image">
-            <label for="image">Image URL</label>
-            <input type="text" id="image" placeholder="Enter image URL">
+                <label for="image">Image URL</label>
+                <input type="text" id="image" placeholder="Enter image URL">
             </div>
             <div class="title">
-            <label for="title">Title</label>
-            <input type="text" id="title" placeholder="Enter title">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="Enter title">
             </div>
             <div class="duration">
-            <label for="duration">Duration</label>
-            <input type="number" id="hours" placeholder="hours">
-            <input type="number" id="minutes" placeholder="minutes"> 
-            <input type="number" id="seconds" placeholder="seconds">
+                <label for="duration">Duration</label>
+                <input type="number" id="hours" placeholder="hours">
+                <input type="number" id="minutes" placeholder="minutes">
+                <input type="number" id="seconds" placeholder="seconds">
             </div>
             <div class="description">
-            <label for="description">Description</label>
-            <textarea id="textarea" placeholder="Enter description"></textarea>
+                <label for="description">Description</label>
+                <textarea id="textarea" placeholder="Enter description"></textarea>
             </div>
             <div class="created">
-            <label for="created">Created</label>
-            <input type="datetime-local" id="created">
+                <label for="created">Created</label>
+                <input type="datetime-local" id="created">
             </div>
             <div class="views">
-            <label for="views">Views</label>
-            <input type="number" id="views" placeholder="Enter number of views">
+                <label for="views">Views</label>
+                <input type="number" id="views" placeholder="Enter number of views">
             </div>
             <div class="button">
-            <button id="generate">Generate Card</button>
+                <button id="generate">Generate Card</button>
             </div>
         </div>
-       </div>
-
-
+    </div>
+    <div class="cardContainer">
+        <!-- This is where the generated cards will be displayed -->
+    </div>
+    <!-- *************************************************** -->
+    <div class="btnForEventListener">
+        <button id="btn"></button>
+    </div>
+    <div class="divForEventBubbling">
+        <span class="SpanChildOfDivForEventBubbling">
+            <div class="DivChildOfSpanChildOfDivForEventBubbling">
+            </div>
+        </span>
+    </div>
     <script>
         // BOM and DOM Manipulation
         //BOM (Browser Object Model): Provides information about the browser and allows interaction with the browser window.
         //DOM (Document Object Model): Represents the structure of the HTML document and allows manipulation of HTML elements.
-        
+
         //***** DOM Manipulation *****//
         // Selecting elements
         document.body.style.backgroundColor = "blue"; // Change the background color of the body element
@@ -206,18 +322,18 @@
         console.log(document.body.childNodes[2].firstElementChild); // Log the first child element of the first box div.
         console.log(document.body.childNodes[2].lastElementChild); // Log the last child element of the container div, which is the last box div.
         let bgcolor = document.body.childNodes[5].lastElementChild;
-       bgcolor.style.backgroundColor = "green"; // Change the background color of the last box div to green.
-       console.log(bgcolor);
-       
-       // TABLE LINKS
-         document.body.childNodes[9].rows[0].style.backgroundColor = "yellow"; // Change the background color of the table to yellow.
+        bgcolor.style.backgroundColor = "green"; // Change the background color of the last box div to green.
+        console.log(bgcolor);
+
+        // TABLE LINKS
+        document.body.childNodes[9].rows[0].style.backgroundColor = "yellow"; // Change the background color of the table to yellow.
         document.body.children[3].rows[2].cells[1].style.backgroundColor = "orange"; // Change the background color of the second cell in the first row to orange.
-    //SIBLINGS
+        //SIBLINGS
         const firstBox = document.getElementById("box1");
         console.log(firstBox.nextElementSibling); // Log the next sibling of the first box div, which is the second box div.
         console.log(firstBox.previousElementSibling); // Log the previous sibling of the first box div, which is likely null.
         console.log(firstBox.parentElement); // Log the parent element of the first box div, which is the container div.
-    
+
         //***** SEARCHING THE DOM *****//
         // getElementById
         let box1 = document.getElementById("box1"); // Get the element with id "box1"
@@ -234,7 +350,7 @@
         for (const element of document.querySelectorAll(".box")) {
             element.style.fontStyle = "italic"; // Change the font style of each box element to italic.
         }
-         // getElementsByClassName
+        // getElementsByClassName
         let boxes = document.getElementsByClassName("box"); // Get all elements with class "box"
         console.log(boxes); // Log the HTMLCollection of box elements
         boxes[0].style.backgroundColor = "purple";  // Change the background color of the first box element to purple.
@@ -242,14 +358,14 @@
         console.log(box1.matches(".box")); // Check if box1 matches the class "box"
         console.log(box1.closest(".container")); // Get the closest ancestor element with class "container"
         console.log(box1.contains(document.querySelector(".box"))); // Check if box1 contains an element with class "box".
-         
+
         //EXERCISE 001
         // 1. Create 5 boxes and each time they need to have different colors. Try using HEX codes.
         let hexcodes = "0123456789ABCDEF";
         let randomHex = Array.from(hexcodes)
         document.querySelectorAll(".boxes").forEach(element => {
-           const color = `#${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}`.toString();
-        console.log(color); 
+            const color = `#${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}`.toString();
+            console.log(color);
             element.style.backgroundColor = color;
         });
 
@@ -259,7 +375,7 @@
         // NORE 2: tag name/ node name
         // tag name is the name of the HTML element (e.g., "div", "span").
         // node name is the type of node (e.g., "ELEMENT_NODE", "TEXT_NODE").
-        
+
         //innerHTML,innerText, outerHTML, and textContent
         // innerHTML: Allows to get the HTML inside the element as a string.
         console.log(document.querySelector(".box").innerHTML) //returns the HTML content of the first box element.
@@ -285,7 +401,7 @@
         //element.hidden = false; // Shows the element
         // To check if an element is hidden, you can use the hidden property:
         console.log(document.querySelector("div[hidden]").hidden); // returns true if the element is hidden, false if it is visible.
-        
+
         //ATTRIBUTES
         // hasAttribute, getAttribute, setAttribute, removeAttribute and element.attributes
         // hasAttribute: Checks if an element has a specific attribute.
@@ -302,7 +418,7 @@
         console.log(document.querySelector(".box").attributes); // returns a NamedNodeMap of all attributes of the first box element.
         // NamedNodeMap: A collection of attributes of an element, where each attribute is represented as a Node.
         // It behaves like an array, but it is not an array. You can access attributes by index or by name.
-        
+
         //NOTE 5: data attributes
         // data attributes are custom attributes that can be added to HTML elements using the "data-" prefix.
         // They are used to store custom data that can be accessed using JavaScript.
@@ -314,22 +430,22 @@
         // createElement: Creates a new HTML element.
         let newBox = document.createElement("div"); // Create a new div element
         newBox.setAttribute("class", "box boxClone"); // Set the class attribute of the new div element
-        newBox.innerHTML="New Box......"; // Set the inner HTML of the new div element
+        newBox.innerHTML = "New Box......"; // Set the inner HTML of the new div element
         //append:
         document.querySelector(".container").append(newBox)
         //prepend:
-        document.querySelector(".container").prepend(newBox.cloneNode(true)); // Prepend a copy of the new box to the container
+        document.querySelector(".container").prepend(newBox.cloneNode(true)); // Prepend a copy of the new box to the container.
         //before:
-        document.querySelector(".container").before(newBox.cloneNode(true)); // Insert a copy of the new box before the container
+        document.querySelector(".container").before(newBox.cloneNode(true)); // Insert a copy of the new box before the container.
         //after:
-        document.querySelector(".container").after(newBox.cloneNode(true)); // Insert a copy of the new box after the container
+        document.querySelector(".container").after(newBox.cloneNode(true)); // Insert a copy of the new box after the container.
         //replaceWith:
-       let replaceBox = document.querySelector(".boxClone").replaceWith(newBox.cloneNode(true)); // Replace the container with a copy of the new box
+        let replaceBox = document.querySelector(".boxClone").replaceWith(newBox.cloneNode(true)); // Replace the container with a copy of the new box.
         //remove:
-        document.querySelector(".boxClone").remove(); // Remove the first boxClone element from the DOM
+        document.querySelector(".boxClone").remove(); // Remove the first boxClone element from the DOM.
         //NOTE 6: When removing an element, it is permanently removed from the DOM and cannot be accessed again.
         // To keep a reference to the removed element, you can store it in a variable before removing it.
-        
+
         //insertAdjacentHTML
         // beforebegin, afterbegin, beforeend, afterend
         //insertAdjacentHTML: Inserts HTML at a specific position relative to the element.
@@ -358,13 +474,259 @@
 
         // EXERCISE 002
         // Create a dynamic card generator that contains image, title, duration, description and how many years or months or days ago it was created along with the number of views.
-        
-        forEach(document.querySelector(".container2").children, (element) => {
-            if(element.value ==""){
-                alert("Please fill all the fields before generating the card.");
-                return;
+        // Let us keep the generate card button inactive until all fields are filled.
+        document.getElementById("generate").addEventListener("click", () => {
+            const fillAllFields = Array.from(document.querySelectorAll(".form input, .form textarea")).every(element => {
+                return element.value == "" ? false : true;
+            });
+            if (fillAllFields) {
+                let content = {
+                    image: document.getElementById("image").value,
+                    title: document.getElementById("title").value,
+                    hours: document.getElementById("hours").value,
+                    minutes: document.getElementById("minutes").value,
+                    seconds: document.getElementById("seconds").value,
+                    description: document.getElementById("textarea").value,
+                    created: document.getElementById("created").value,
+                    views: document.getElementById("views").value
+                };
+                let finalViews = "";
+                if (content.views <= 1000) {
+                    finalViews = content.views.toString();
+                } else if (content.views > 1000 && content.views <= 1000000) {
+                    finalViews = (content.views / 1000).toString() + "K";
+                } else if (content.views > 1000000 && content.views <= 1000000000) {
+                    finalViews = (content.views / 1000000).toString() + "M";
+                } else if (content.views > 1000000000) {
+                    finalViews = (content.views / 1000000000).toString() + "B";
+                }
+                document.querySelector(".cardContainer").insertAdjacentHTML("beforeend",
+                    `<div class="card" style="width: 100%; background: #181818; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.4); color: #fff; font-family: Arial, sans-serif; margin-bottom: 20px;display:flex">
+                        <div style="position: relative;">
+                            <img src="${content.image}" alt="Card Image" style="width: 320px; height: 180px; object-fit: cover; display: block;">
+                            <span style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.85); color: #fff; font-size: 13px; padding: 2px 6px; border-radius: 3px;">
+                                ${content.hours.padStart(2, '0')}:${content.minutes.padStart(2, '0')}:${content.seconds.padStart(2, '0')}
+                            </span>
+                        </div>
+                        <div style="padding: 14px 16px 10px 16px;">
+                            <div style="font-size: 17px; font-weight: 600; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${content.title}</div>
+                            <div style="font-size: 14px; color: #aaa; margin-bottom: -10px; height: 38px; overflow: hidden; text-overflow: ellipsis;">${content.description}</div>
+                            <div style="display: flex;gap:8px; align-items: center; font-size: 13px; color: #aaa;">
+                                <span>
+                                    <svg style="vertical-align: middle;" width="16" height="16" fill="#aaa" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    ${finalViews} views
+                                </span>
+                                <span>
+                                    ${(() => {
+                        const createdDate = new Date(content.created);
+                        const now = new Date();
+                        const diff = now - createdDate;
+                        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+                        const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+                        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                        if (years > 0) return years + " year" + (years > 1 ? "s" : "") + " ago";
+                        if (months > 0) return months + " month" + (months > 1 ? "s" : "") + " ago";
+                        if (days > 0) return days + " day" + (days > 1 ? "s" : "") + " ago";
+                        return "Today";
+                    })()}
+                                </span>
+                            </div>
+                        </div>
+                    </div>`
+                );
+
+            } else {
+                alert("Please fill all fields before generating the card.")
+            }
+
+        })
+        //--------------------------------------------------------------------------------------------------------------------------///
+        // Event Listeners
+        // Event listeners are used to respond to user interactions with the page, such as clicks,key presses, and form submissions.
+        let button = document.querySelector("#btn");
+        button.innerText = "Click Me";
+        button.addEventListener("click", () => {
+            button.innerText = "Clicked!";
+        })
+        //List of all Event Listeners
+        // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
+        // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
+        // https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent
+        // https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent
+        // https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent
+        // https://developer.mozilla.org/en-US/docs/Web/API/DragEvent
+        // https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent
+        // https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent
+        // https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent
+        // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent
+
+        //EventBubbling
+        document.querySelector(".divForEventBubbling").addEventListener("click", () => {
+            alert("you have clicked divForEventBubbling")
+        })
+        document.querySelector(".SpanChildOfDivForEventBubbling").addEventListener("click", () => {
+            alert("you have clicked SpanChildOfDivForEventBubbling")
+        })
+        document.querySelector(".DivChildOfSpanChildOfDivForEventBubbling").addEventListener("click", () => {
+            alert("you have clicked DivChhildOfSpanChildOfDivForEventBubbling")
+        })
+        // EventListeners applies on all the childs present in the parent. i.e, if the parent is clicked, only parent is clocked. But if child is clicked, child + parent, both are clicked.
+
+        // Adding and Removing EventListeners.
+        const handleEventListener = () => {
+            alert("event handled using handleEventListener.")
+        }
+        document.querySelector(".SpanChildOfDivForEventBubbling").addEventListener("click", handleEventListener)
+
+        /*
+        //SetTimeout and SetInterval
+        // setTimeout: Executes a function after a specified delay.
+        setTimeout(() => {
+            alert("This is a delayed message using setTimeout.");
+        }, 2000); // Executes after 2 seconds (2000 milliseconds)   
+        // setInterval: Repeatedly executes a function at specified intervals.
+        let intervalId = setInterval(() => {
+            console.log("This message is logged every 3 seconds using setInterval.");
+        }, 3000); // Logs every 3 seconds (3000 milliseconds)
+        // To stop the interval, you can use clearInterval:
+        setTimeout(() => {
+            clearInterval(intervalId); // Stops the interval after 10 seconds
+            console.log("Interval stopped.");
+        }, 10000); // Stops the interval after 10 seconds (10000 milliseconds).
+        // Applying setTimeout and setInterval to random color change of box exercise.
+        const changeColorInTime =setInterval(()=>{
+                 document.querySelectorAll(".boxes").forEach(element => {
+           const color = `#${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}${randomHex[Math.floor(Math.random() * 16)]}`.toString();
+            element.style.backgroundColor = color;
+        });
+            },1000);
+
+        setTimeout(()=>{
+            setTimeout(()=>{
+                clearInterval(changeColorInTime)
+            },5000)
+         },3000)
+         // --------------------------------------//
+                  */
+
+        // CallBack Functions
+        // Asynchronous nature of JavaScript allows functions to be executed after a certain event or time.
+        let callback = (arg) => {
+            console.log(arg)
+        }
+
+        let loadScript = (src, callback) => {
+            let sc = document.createElement("script");
+            sc.src = src;
+            sc.onload = callback("Harry")
+            document.head.append(sc)
+        }
+        loadScript("https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js", callback);
+        // Using callbacks under callbacks continuously makes code very unreadable and hard to maintain.
+        // This is known as "Callback Hell" or "Pyramid of Doom".
+
+        /*
+        //PROMISES : A method to overcome callback hell.
+        let promise1 = new Promise((resolve, reject) => {
+            // Resolve: The promise is fulfilled successfully.
+            // Reject: The promise is rejected with an error.
+            let randomNumber = Math.random()
+            if (randomNumber < 0.5) reject("Your network request failed.")
+            else {
+                setTimeout(() => {
+                    // console.log("Network request successful.");
+                    resolve("Network request successful.");
+                }), 2000
+            }
+        })
+        promise1.then((a) => {
+            console.log(a);
+        })
+        //catch: Used to handle errors in promises.
+        promise1.then((a) => {
+            console.log(a)
+        }).catch((error) => {
+            console.log(error);
+        })
+        //.then and .catch are called consumers of the promise.
+        //promise.finally: Used to execute code after the promise is settled, regardless of whether it was resolved or rejected. It is used to perform general cleanups.
+
+        //Promise API:
+        // There are six static methods of promise class.
+        // Promise.all: waits till all the promises are resolved and returns an array of results.It shows an error if any of the promises are rejected.
+        let promise2 = new Promise((resolve, reject) => {
+            let randomNumber = Math.random()
+            if (randomNumber < 0.5) reject("Your network2 request failed.")
+            else {
+                setTimeout(() => {
+                    // console.log("Network2 request successful.");
+                    resolve("Network2 request successful.");
+                }, 1000)
             }
         });
-    </script>    
+
+        let promise3 = Promise.all([promise1, promise2])
+        promise3.then((a) => {
+            console.log(a); // Logs an array of results from both promises if both are resolved.
+        }).catch((error) => {
+            console.log(error); // Logs the error if any of the promises are rejected.
+        })
+
+        //promise.Allsettled: waits till all the promises are settled (either resolved or rejected) and returns an array of results.
+        let promise4 = Promise.allSettled([promise1, promise2])
+        promise4.then((a) => {
+            console.log(a); // Logs an array of results from both promises, including their status ("fulfilled" or "rejected") and value or reason.
+        }).catch((error) => {
+            console.log(error); // Logs the error if any of the promises are rejected.
+        }) // The error also shows if one is rejected and the other is resolved.
+
+        //promise.race: Returns the result of the first promise that settles (either resolves or rejects).
+        let promise5 = Promise.race([promise1, promise2])
+        promise5.then((a) => {
+            console.log(a); // Logs the result of the first promise that settles.
+        }).catch((error) => {
+            console.log(error); // Logs the error if the first promise is rejected.
+        })
+
+        //Promise.any: Returns the result of the first promise that resolves, ignoring any rejections.
+        let promise6 = Promise.any([promise1, promise2])
+        promise6.then((a) => {
+            console.log(a); // Logs the result of the first promise that resolves.
+        })
+
+        //promise.resolve: Creates a resolved promise with a given value.
+        let promise7 = Promise.resolve("This is a resolved promise.");
+        promise7.then((a) => {
+            console.log(a); // Logs the resolved value of the promise.
+        })
+
+        //promise.reject: Creates a rejected promise with a given reason.
+        let promise8 = Promise.reject("This is a rejected promise.");
+        promise8.catch((error) => {
+            console.log(error); // Logs the reason for the rejection of the promise.
+        })
+        */
+
+        // Async/Await: A more readable way to work with promises.
+        // Helps to hold the execution of rest of the code until the required element is loaded or executed.
+        // Note that async/await can only be used inside an async function.
+        async function fetchData() {
+            let promise9 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Data fetched successfully.");
+                    resolve("Data fetched successfully by Akhilesh.");
+                }, 2000);
+            });
+            console.log(promise9)
+            return promise9; // Returns the promise.
+        }
+
+        async function main(){
+            let data = await fetchData(); // Waits for the promise to resolve.
+            console.log("This is written after the fetchData call, but it will not be executed until the promise is resolved because we have used await.")
+        }
+
+    </script>
 </body>
+
 </html>
