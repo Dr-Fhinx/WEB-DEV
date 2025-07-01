@@ -717,14 +717,125 @@
                     resolve("Data fetched successfully by Akhilesh.");
                 }, 2000);
             });
-            console.log(promise9)
+            // console.log(promise9)
             return promise9; // Returns the promise.
         }
 
-        async function main(){
-            let data = await fetchData(); // Waits for the promise to resolve.
-            console.log("This is written after the fetchData call, but it will not be executed until the promise is resolved because we have used await.")
+        // Fetch API: A way to make network requests in JavaScript.
+        // It returns a promise that resolves to the response of the request.
+        async function fetchAPIfromURL() {
+            let responnse = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+            // Here we are calling the fetch API to get data from a URL.
+            let data = await responnse.json(); // Waits for the response to be converted to JSON.
+            //parse: Here we are parsing the response to JSON format. parsing is the process of converting a string into an object.
+            console.log(data); // Logs the data fetched from the API.
         }
+
+        async function main() {
+            let data = await fetchData(); // Waits for the promise to resolve.
+            // console.log(data); // Logs the resolved value of the promise.
+            console.log("This is written after the fetchData call, but it will not be executed until the promise is resolved because we have used await.")
+            //fetching data from jsonplaceholder API
+            await fetchAPIfromURL(); // Waits for the API call to complete.
+            console.log("This is written after the fetchAPIfromURL call, but it will not be executed until the API call is completed because we have used await.")
+        }
+
+        main()
+        //Settling of a promise means that the promise is either resolved or rejected.
+        // Resolve means the promise has setlled successfully and the value is available.
+        // Reject mean the promise has setlled with an error and the error is available.
+
+        //EXERCISE 003 : Hecker's terminal
+        // 1. Create a green bg and display the following mesages at random time btw 0 to 7 secs.
+        // 2. The dots at the end should be arrive one at a time and blink.
+        // 3. The messages are : 
+        // Hecker's malware initializing...
+        // Transfering all the data from your computer...
+        // Transfer complete...
+        // Hecking your account...
+        // Money detected...
+        // Money transfer initialised...
+        // Money transfer complete.
+        // Thank you.
+
+        //-----------SOLUTION--------------//
+        // Creating a newDiv
+        let newDiv = document.createElement("div")
+        document.body.prepend(newDiv)
+        newDiv.style.backgroundColor = "black"
+        newDiv.style.fontSize = "30px"
+        newDiv.style.color = "lightgreen"
+        newDiv.style.fontStyle = "sans serif"
+        // newDiv.style.padding="-500px"
+        // newDiv.style.marginBottom = "-20px"
+        // newDiv.style.paddingBottom = "-500px"
+        // Creating variable for random time.
+
+        async function AnimatingText(statement, randomTime) {
+            const newPara = document.createElement("p")
+            newDiv.append(newPara)
+            // newPara.style.paddingBottom = "-500px"
+            // newPara.style.marginBottom = "-50px"
+            for (const element of Array.from(statement)) {
+                await new Promise((resolve, reject) => {
+                    setTimeout(() => { resolve(newPara.innerText += element) }, 50)
+                })
+            }
+
+            let running = true
+            setTimeout(() => { running = false }, randomTime)
+            while (running) {
+                for (let i = 0; i < 4; i++) {
+                    await new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            newPara.innerText += ".";
+                            resolve();
+                        }, randomTime / 10);
+                    });
+                }
+                newPara.innerText = statement;
+            }
+            if (running == false) {
+                newPara.innerText += "..."
+
+            }
+            // async and await under ssetInterval do not work as intended.
+
+        }
+
+        async function main2() {
+            let randomTime = Math.ceil(Math.random() * 7000);
+            
+            await AnimatingText("Hecker's malware initializing", randomTime)
+            await AnimatingText(" Transfering all the data from your computer", randomTime)
+            await AnimatingText("Transfer complete", randomTime)
+            await AnimatingText("Transfer complete", randomTime)
+            await AnimatingText("Hecking your account", randomTime)
+            await AnimatingText("Money detected", randomTime)
+            await AnimatingText("Money transfer initialised", randomTime)
+            await AnimatingText("Money transfer complete", randomTime)
+            await AnimatingText("Thank you", randomTime)
+        }
+        main2()
+        // ******************************************************************//
+
+        //ERROR HANDLING
+        //Error Handling : A way to handle errors.
+        //NOTE 01 : ParseInt(var): A way to parse string to integer, but parsing a string gives NaN (NotANumber).
+        //But still if you use ParseInt on a string, it do not shows error cuz it has a forgiving nature... haha..
+        //Therefore it is necessary to make or throw errors manually.
+        //Trowing an error :
+        throw SyntaxError("This is an example error.")
+        // All error types : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+        // We can either throw error or catch the error in console.
+        try{
+            console.log("your commands")
+        }catch{
+            console.log("your custom error message caught in terminal using catch if your command do not work.")
+        }
+
+        // Finally Clause:
+        
 
     </script>
 </body>
