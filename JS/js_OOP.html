@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OOPS</title>
+    </head>
+    <body>
+
+        <script>
+            // OOP: Object Oriented Programming.
+            // You can achieve the things achieved by OOP using functional programming as well.
+            // In OOP we use real world objects to make real world templates.
+            let obj = {
+                a:1,
+                b:"Harry"
+            } // This is called object.
+            // PROTOTYPE : JS objects hace a special property called Proptotype which is either null or refers other object. This helps to copy properties of one object into other without sweating out in copy paste.
+            //exaample:
+            let radio ={
+                sound:true
+            }
+            let ipod={
+                antenna:true
+            }
+            ipod.__proto__ = radio // now ipd has a prototype of radio.
+            
+            //Constructor : 
+            //Class : It is the playground which becommes an object when something is written in it.
+            class Mobile{
+                constructor(){
+                    console.log("Object is created.")
+                }
+                screen(){
+                    console.log("16:9 screen OLED.")
+                }
+                sound(){
+                    console.log("You can hear crystal clear sound.")
+                }
+            }
+            let a = new Mobile()
+            a.screen()
+            a.sound()
+            // Arguments for an object.
+            class laptop{
+                constructor(brand){
+                    this.brand = brand // this: helps in creating a new property in an object.
+                    // console.log("You have successfully created your own brand.")
+                }
+                graphics(){
+                    console.log(5090)
+                }
+            }
+            let b = new laptop("MSI")
+            console.log(b.brand)
+            // If we want to have the properties of one object in other, we can use extend keyword.
+            class PC extends laptop{
+                constructor(brand){
+                    super(brand) // This is helpful to get the constructor of laptop object to work alonng with the constructor of PC. super makes laptop's constructor work.
+                    this.company = brand
+                }
+                graphic(){
+                    super.graphics() // super keyword helps in getting the info from the objects of linked object.
+                }
+            }
+            console.log(new PC("MSI").brand) 
+            console.log(new PC("ASUS").company)
+
+            //INSTANCE OF OPERATOR : returns true if object belongs to the class or any other class inheriting from it. Returns false if parent object is compared with inherited class. returns true if inherit
+            console.log(a instanceof Mobile)
+
+
+            // STATIC METHODS :
+            // Static methods are used to implement functions that belonng to a class as a whole and not to a particular object.
+            class employee{
+                static method(){
+                    alert("hello")
+                }
+                static method2(){
+                    alert("Hello2")
+                }
+            }
+            employee.method() // You can call the method directly here as we are usinng static keyword.
+            employee.method2()
+
+            // GETTERS AND SETTERS :
+                class person{
+                    constructor(name){
+                        this._name = name// ._name do not assign any value at the beginninng. So, we need to define get fnction.
+                    }
+                    get name(){
+                        return this._name
+                    }// You can define any inital value you want.
+                    set name(newName){
+                        this._name = newName 
+                    }// This function ensures the change in value. If you want to disable  the any kind of change in value of the variable, you can define and write nothing in it. This will ensure that no matter what you do, the valuue just wont change.
+                }
+                let c = new person("Dr-Fhnix")
+                console.log(c.name)
+                c.name = "Dr-Fhinx_clone"
+                console.log(c.name)
+                
+
+        </script>
+    </body>
+</html>
