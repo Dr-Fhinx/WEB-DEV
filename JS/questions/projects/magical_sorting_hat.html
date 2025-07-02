@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let houses = {
+            griffindoor:["Griffindoor students :"],
+            hufflepuff:["Hu"],
+            ravenclaw:[],
+            slytherin:[]
+        }
+       function MagicalSorting(StudentNames){
+        const nameLength = Array.from(StudentNames).length
+        if(nameLength<6){ houses.griffindoor.push(StudentNames)}
+        else if(nameLength<8){ houses.hufflepuff.push(StudentNames)}
+        else if(nameLength<12){ houses.ravenclaw.push(StudentNames)}
+        else  houses.slytherin.push(StudentNames)
+       }
+        let dummyVariable = 1
+        while(dummyVariable){
+            const StudentNames = prompt("Enter the name of a student")
+            if(!StudentNames){
+                dummyVariable=0
+            }else{
+                MagicalSorting(StudentNames)
+            }
+        }
+        console.log( houses.griffindoor)
+        console.log( houses.hufflepuff)
+        console.log( houses.ravenclaw)
+        console.log( houses.slytherin)
+
+
+    </script>
+</body>
+</html>
