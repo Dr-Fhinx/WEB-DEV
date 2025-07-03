@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //The Double Trouble: You are tasked with writing a function that doubles each element in an array. However, there's a catch: if the array contains consecutive duplicate elements, only double one of them.
+        
+        let arr = []
+        let dummyVariable = 1
+        while(dummyVariable){
+            const input = prompt("Enter the numbers for an array")
+            if(!input){
+                dummyVariable = 0
+            }
+            else{
+                arr.push(input)
+            }
+        }
+       for(let i = 0;i<arr.length;i++){
+        if(parseInt(arr[i])+parseInt(arr[i+1])==2*arr[i]){arr[i]=parseInt(arr[i])}
+        else{arr[i]=2*arr[i]}
+       }
+       console.log(arr)
+    </script>
+</body>
+</html>
